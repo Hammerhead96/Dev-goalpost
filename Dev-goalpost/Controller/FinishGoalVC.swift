@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class FinishGoalVC: UIViewController, UITextFieldDelegate  {
     // Outlets
@@ -26,12 +27,30 @@ class FinishGoalVC: UIViewController, UITextFieldDelegate  {
         createGoalBtn.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
         createGoalBtn.addTarget(self, action: #selector(FinishGoalVC.createGoalBtnPressed), for: .touchUpInside)
         pointsTextField.inputAccessoryView = createGoalBtn
-        
-    }
+    }   // end view did load
     @objc func createGoalBtnPressed() {
         print("Booyah! Create!")
+        if pointsTextField.text != "" {
+            self.save { (complete) in
+                if complete {
+                    dismiss(animated: true, completion: nil)
+                }   }   }   }
+    func save(completion: (_ finished: Bool) -> ()) {
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
+        let goal = Goal(context: managedContext)
+        goal.goalDescription = goalDescription
+        goal.goalType = goalType.rawValue
+        goal.goalCompletionValue = Int32(pointsTextField.text!)!
+        goal.goalProgress = Int32(0)
+        do {
+        try managedContext.save()
+            print("Data saved yo")
+            completion(true)
+        } catch {
+            debugPrint("Could not save: \(error.localizedDescription)")
+            completion(false)
+        }   }
+    @IBAction func backBtnPressed(_ sender: Any) {
+        dismissDetail()
     }
-
-    
-
 }

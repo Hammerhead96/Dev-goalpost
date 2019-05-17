@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import CoreData
+
+let appDelegate = UIApplication.shared.delegate as? AppDelegate
 
 class GoalsVC: UIViewController {
     // Outlets
@@ -18,7 +21,7 @@ class GoalsVC: UIViewController {
         tableView.dataSource = self
         tableView.isHidden = false
         
-    }
+    }   // end viewDidLoad
 
 
     @IBAction func addGoalBtnPressed(_ sender: Any) {

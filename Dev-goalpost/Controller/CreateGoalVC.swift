@@ -28,7 +28,6 @@ class CreateGoalVC: UIViewController, UITextFieldDelegate {
         longTermBtn.setDeselectedColor()
     } // end view did load
     @objc func nextBtnPressed() {
-        print("Booyah Bitch!")
         if goalTextView.text != "" {
             guard let finishGoalVC = storyboard?.instantiateViewController(withIdentifier: "FinishGoalVC") as? FinishGoalVC else { return }
             finishGoalVC.initData(description: goalTextView.text!, type: goalType)
