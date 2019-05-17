@@ -23,17 +23,17 @@ class FinishGoalVC: UIViewController, UITextFieldDelegate  {
         pointsTextField.delegate = self
         let createGoalBtn = UIButton(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 50))
         createGoalBtn.backgroundColor = #colorLiteral(red: 0.9385011792, green: 0.7164435983, blue: 0.3331357837, alpha: 1)
-        createGoalBtn.setTitle("NEXT", for: .normal)
+        createGoalBtn.setTitle("Create Goal", for: .normal)
         createGoalBtn.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
         createGoalBtn.addTarget(self, action: #selector(FinishGoalVC.createGoalBtnPressed), for: .touchUpInside)
         pointsTextField.inputAccessoryView = createGoalBtn
     }   // end view did load
     @objc func createGoalBtnPressed() {
-        print("Booyah! Create!")
+        print("Booyah! Created!")
         if pointsTextField.text != "" {
             self.save { (complete) in
                 if complete {
-                    dismiss(animated: true, completion: nil)
+                    dismissToRoot()
                 }   }   }   }
     func save(completion: (_ finished: Bool) -> ()) {
         guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
