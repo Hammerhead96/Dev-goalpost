@@ -3,7 +3,7 @@
     <entity name="Goal" representedClassName="Goal" syncable="YES" codeGenerationType="class">
         <attribute name="goalCompletionValue" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="goalDescription" attributeType="String" syncable="YES"/>
-        <attribute name="goalProgress" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="goalProgress" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="goalType" attributeType="String" syncable="YES"/>
     </entity>
     <elements>

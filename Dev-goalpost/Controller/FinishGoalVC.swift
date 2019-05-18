@@ -27,6 +27,7 @@ class FinishGoalVC: UIViewController, UITextFieldDelegate  {
         createGoalBtn.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
         createGoalBtn.addTarget(self, action: #selector(FinishGoalVC.createGoalBtnPressed), for: .touchUpInside)
         pointsTextField.inputAccessoryView = createGoalBtn
+        
     }   // end view did load
     @objc func createGoalBtnPressed() {
         print("Booyah! Created!")
