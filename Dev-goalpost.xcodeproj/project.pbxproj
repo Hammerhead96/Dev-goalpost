@@ -70,7 +70,6 @@
 			children = (
 				63819506228E15550017F141 /* Extensions */,
 				63819505228E154C0017F141 /* Enum */,
-				63819504228E15080017F141 /* Constants */,
 				63819503228E14FD0017F141 /* Model */,
 				63819502228E14F50017F141 /* View */,
 				63819501228E14E70017F141 /* Controller */,
@@ -107,13 +106,6 @@
 				638194F3228E137B0017F141 /* Dev_goalpost.xcdatamodeld */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		63819504228E15080017F141 /* Constants */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Constants;
 			sourceTree = "<group>";
 		};
 		63819505228E154C0017F141 /* Enum */ = {

@@ -13,6 +13,7 @@ class CreateGoalVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var goalTextView: UITextField!
     @IBOutlet weak var shortTermBtn: UIButton!
     @IBOutlet weak var longTermBtn: UIButton!
+    // Vars
     var goalType: GoalType = .shortTerm
     
     override func viewDidLoad() {
@@ -47,5 +48,4 @@ class CreateGoalVC: UIViewController, UITextFieldDelegate {
     @IBAction func backBtnPressed(_ sender: Any) {
         dismissDetail()
     }
-    
 }

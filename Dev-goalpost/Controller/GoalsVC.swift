@@ -16,7 +16,6 @@ class GoalsVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     // Vars
     var goals: [Goal] = []
-    var isComplete = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,8 +60,6 @@ extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
         return true
     }
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        //return UITableViewCellEditingStyle.none
-        //return UITableViewCell.EditingStyle.none
         return .none
     }
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
@@ -87,7 +84,6 @@ extension GoalsVC {
         managedContext.delete(goals[indexPath.row])
         do {
             try managedContext.save()
-            print("Data deleted yo!")
         } catch {
             debugPrint("Could not save: \(error.localizedDescription)")
         }
@@ -97,7 +93,6 @@ extension GoalsVC {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Goal")
         do {
             goals = try managedContext.fetch(fetchRequest) as! [Goal]
-            print("Data fetched successfully!")
             completion(true)
         } catch {
             debugPrint("Could not fetch: \(error.localizedDescription)")
@@ -114,7 +109,6 @@ extension GoalsVC {
         }
         do {
             try managedContext.save()
-            print("Progress + 1 ")
         } catch {
             debugPrint("Could not set progress: \(error.localizedDescription)")
         }
