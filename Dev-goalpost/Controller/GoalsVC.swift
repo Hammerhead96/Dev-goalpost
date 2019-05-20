@@ -8,14 +8,19 @@
 
 import UIKit
 import CoreData
+import AVFoundation
 
 let appDelegate = UIApplication.shared.delegate as? AppDelegate
+var goalWasSet = false
 
 class GoalsVC: UIViewController {
     // Outlets
     @IBOutlet weak var tableView: UITableView!
     // Vars
+    var player = AVAudioPlayer()
     var goals: [Goal] = []
+    let deletePath = Bundle.main.path(forResource:"deleteGoal", ofType: "wav")
+    let setPath = Bundle.main.path(forResource:"goalSet", ofType: "mp3")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +32,15 @@ class GoalsVC: UIViewController {
         super.viewWillAppear(true)
         fetchCoreDataObjects()
         tableView.reloadData()
+        if goalWasSet {
+            do {
+                try self.player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: self.setPath!))
+            } catch {
+                print("set fail")
+            }
+            self.player.play()
+            goalWasSet = false
+        }
     }
     func fetchCoreDataObjects() {
         self.fetch { (complete) in
@@ -65,6 +79,12 @@ extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: .destructive, title: "DELETE") { (rowAction, indexPath) in
             self.removeGoal(atIndexPath: indexPath)
+            do {
+                try self.player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: self.deletePath!))
+            } catch {
+                print("delete fail")
+            }
+            self.player.play()
             self.fetchCoreDataObjects()
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }

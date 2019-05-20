@@ -27,13 +27,14 @@ class FinishGoalVC: UIViewController, UITextFieldDelegate  {
         createGoalBtn.backgroundColor = #colorLiteral(red: 0.9385011792, green: 0.7164435983, blue: 0.3331357837, alpha: 1)
         createGoalBtn.setTitle("Create Goal", for: .normal)
         createGoalBtn.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
-        createGoalBtn.addTarget(self, action: #selector(FinishGoalVC.createGoalBtnPressed), for: .touchUpInside)
+        createGoalBtn.addTarget(self, action: #selector(createGoalBtnPressed), for: .touchUpInside)
         pointsTextField.inputAccessoryView = createGoalBtn
     }   // end view did load
     @objc func createGoalBtnPressed() {
         if pointsTextField.text != "" {
             self.save { (complete) in
                 if complete {
+                    goalWasSet = true
                     dismissToRoot()
                 }   }   }   }
     func save(completion: (_ finished: Bool) -> ()) {

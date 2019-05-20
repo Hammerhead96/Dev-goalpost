@@ -23,7 +23,7 @@ class CreateGoalVC: UIViewController, UITextFieldDelegate {
         nextBtn.backgroundColor = #colorLiteral(red: 0.9385011792, green: 0.7164435983, blue: 0.3331357837, alpha: 1)
         nextBtn.setTitle("NEXT", for: .normal)
         nextBtn.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
-        nextBtn.addTarget(self, action: #selector(CreateGoalVC.nextBtnPressed), for: .touchUpInside)
+        nextBtn.addTarget(self, action: #selector(nextBtnPressed), for: .touchUpInside)
         goalTextView.inputAccessoryView = nextBtn
         shortTermBtn.setSelectedColor()
         longTermBtn.setDeselectedColor()
