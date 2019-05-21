@@ -17,10 +17,9 @@ class GoalsVC: UIViewController {
     // Outlets
     @IBOutlet weak var tableView: UITableView!
     // Vars
-    var player = AVAudioPlayer()
     var goals: [Goal] = []
-    let deletePath = Bundle.main.path(forResource:"deleteGoal", ofType: "wav")
-    let setPath = Bundle.main.path(forResource:"goalSet", ofType: "mp3")
+    //let deletePath = Bundle.main.path(forResource:"deleteGoal", ofType: "wav")
+    //let setPath = Bundle.main.path(forResource:"goalSet", ofType: "mp3")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,12 +32,7 @@ class GoalsVC: UIViewController {
         fetchCoreDataObjects()
         tableView.reloadData()
         if goalWasSet {
-            do {
-                try self.player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: self.setPath!))
-            } catch {
-                print("set fail")
-            }
-            self.player.play()
+            AudioManager.shared.playSound(name: "goalSet", type: "mp3")
             goalWasSet = false
         }
     }
@@ -79,12 +73,7 @@ extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: .destructive, title: "DELETE") { (rowAction, indexPath) in
             self.removeGoal(atIndexPath: indexPath)
-            do {
-                try self.player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: self.deletePath!))
-            } catch {
-                print("delete fail")
-            }
-            self.player.play()
+            AudioManager.shared.playSound(name: "deleteGoal", type: "wav")
             self.fetchCoreDataObjects()
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
@@ -131,6 +120,5 @@ extension GoalsVC {
             try managedContext.save()
         } catch {
             debugPrint("Could not set progress: \(error.localizedDescription)")
-        }
-    }
+        }   }
 }
