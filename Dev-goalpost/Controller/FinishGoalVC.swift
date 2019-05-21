@@ -30,7 +30,7 @@ class FinishGoalVC: UIViewController, UITextFieldDelegate  {
         if pointsTextField.text != "" {
             self.save { (complete) in
                 if complete {
-                    AudioManager.shared.playSound(name: "goalSet", type: "mp3")
+                    AudioManager.shared.playSound(name: "goalSet", type: "wav")
                     dismissToRoot()
                 }   }   }   }
     func save(completion: (_ finished: Bool) -> ()) {

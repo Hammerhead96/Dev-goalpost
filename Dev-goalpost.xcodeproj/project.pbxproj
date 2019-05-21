@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		632AFDA52293C9ED00ABCDDC /* UserActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632AFDA42293C9ED00ABCDDC /* UserActionButton.swift */; };
 		632AFDA82293E24800ABCDDC /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632AFDA72293E24800ABCDDC /* AudioManager.swift */; };
+		63403526229487040067975A /* goalSet.wav in Resources */ = {isa = PBXBuildFile; fileRef = 63403525229487040067975A /* goalSet.wav */; };
 		6340C3D022924C9600EAB911 /* GoalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340C3CF22924C9600EAB911 /* GoalType.swift */; };
-		6364CF1522921A11004A6F36 /* completed.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6364CF1422921A11004A6F36 /* completed.mp3 */; };
+		6364CF1522921A11004A6F36 /* goalCompleted.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6364CF1422921A11004A6F36 /* goalCompleted.mp3 */; };
 		6364CF1922921B7B004A6F36 /* deleteGoal.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6364CF1822921B7B004A6F36 /* deleteGoal.wav */; };
-		6364CF1B22921F5D004A6F36 /* goalSet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6364CF1A22921F5D004A6F36 /* goalSet.mp3 */; };
+		6364CF1B22921F5D004A6F36 /* goalAdvanced.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6364CF1A22921F5D004A6F36 /* goalAdvanced.mp3 */; };
 		638194ED228E137B0017F141 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638194EC228E137B0017F141 /* AppDelegate.swift */; };
 		638194EF228E137B0017F141 /* GoalsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638194EE228E137B0017F141 /* GoalsVC.swift */; };
 		638194F2228E137B0017F141 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 638194F0228E137B0017F141 /* Main.storyboard */; };
@@ -29,10 +30,11 @@
 /* Begin PBXFileReference section */
 		632AFDA42293C9ED00ABCDDC /* UserActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActionButton.swift; sourceTree = "<group>"; };
 		632AFDA72293E24800ABCDDC /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		63403525229487040067975A /* goalSet.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = goalSet.wav; sourceTree = "<group>"; };
 		6340C3CF22924C9600EAB911 /* GoalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalType.swift; sourceTree = "<group>"; };
-		6364CF1422921A11004A6F36 /* completed.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = completed.mp3; sourceTree = "<group>"; };
+		6364CF1422921A11004A6F36 /* goalCompleted.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = goalCompleted.mp3; sourceTree = "<group>"; };
 		6364CF1822921B7B004A6F36 /* deleteGoal.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = deleteGoal.wav; sourceTree = "<group>"; };
-		6364CF1A22921F5D004A6F36 /* goalSet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = goalSet.mp3; sourceTree = "<group>"; };
+		6364CF1A22921F5D004A6F36 /* goalAdvanced.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = goalAdvanced.mp3; sourceTree = "<group>"; };
 		638194E9228E137B0017F141 /* Dev-goalpost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dev-goalpost.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		638194EC228E137B0017F141 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		638194EE228E137B0017F141 /* GoalsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsVC.swift; sourceTree = "<group>"; };
@@ -92,9 +94,10 @@
 				63819502228E14F50017F141 /* View */,
 				63819501228E14E70017F141 /* Controller */,
 				638194EC228E137B0017F141 /* AppDelegate.swift */,
-				6364CF1422921A11004A6F36 /* completed.mp3 */,
+				63403525229487040067975A /* goalSet.wav */,
+				6364CF1422921A11004A6F36 /* goalCompleted.mp3 */,
 				6364CF1822921B7B004A6F36 /* deleteGoal.wav */,
-				6364CF1A22921F5D004A6F36 /* goalSet.mp3 */,
+				6364CF1A22921F5D004A6F36 /* goalAdvanced.mp3 */,
 				638194F0228E137B0017F141 /* Main.storyboard */,
 				638194F6228E137C0017F141 /* Assets.xcassets */,
 				638194F8228E137C0017F141 /* LaunchScreen.storyboard */,
@@ -198,12 +201,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6364CF1B22921F5D004A6F36 /* goalSet.mp3 in Resources */,
+				6364CF1B22921F5D004A6F36 /* goalAdvanced.mp3 in Resources */,
 				638194FA228E137C0017F141 /* LaunchScreen.storyboard in Resources */,
-				6364CF1522921A11004A6F36 /* completed.mp3 in Resources */,
+				6364CF1522921A11004A6F36 /* goalCompleted.mp3 in Resources */,
 				638194F7228E137C0017F141 /* Assets.xcassets in Resources */,
 				6364CF1922921B7B004A6F36 /* deleteGoal.wav in Resources */,
 				638194F2228E137B0017F141 /* Main.storyboard in Resources */,
+				63403526229487040067975A /* goalSet.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

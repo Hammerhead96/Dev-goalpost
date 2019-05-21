@@ -24,7 +24,7 @@ class GoalCell: UITableViewCell {
         self.goalProgressLbl.text = String(describing: goalProgress)
         self.goalCompletionValue = goalCompletion
         if goalProgress == goalCompletion {
-            AudioManager.shared.playSound(name: "completed", type: "mp3")
+            AudioManager.shared.playSound(name: "goalCompleted", type: "mp3")
             self.completionView.isHidden = false
         } else {
             self.completionView.isHidden = true

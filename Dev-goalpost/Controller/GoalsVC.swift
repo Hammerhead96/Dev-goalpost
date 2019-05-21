@@ -71,6 +71,7 @@ extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
         }
         deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
         let addAction = UITableViewRowAction(style: .normal, title: "ADD 1") { (rowAction, indexPath) in
+            AudioManager.shared.playSound(name: "goalAdvanced", type: "mp3")
             self.setProgress(atIndexPath: indexPath)
             tableView.reloadRows(at: [indexPath], with: .automatic)
         }
