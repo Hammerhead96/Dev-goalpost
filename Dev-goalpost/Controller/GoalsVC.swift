@@ -8,18 +8,14 @@
 
 import UIKit
 import CoreData
-import AVFoundation
 
 let appDelegate = UIApplication.shared.delegate as? AppDelegate
-var goalWasSet = false
 
 class GoalsVC: UIViewController {
     // Outlets
     @IBOutlet weak var tableView: UITableView!
     // Vars
     var goals: [Goal] = []
-    //let deletePath = Bundle.main.path(forResource:"deleteGoal", ofType: "wav")
-    //let setPath = Bundle.main.path(forResource:"goalSet", ofType: "mp3")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +27,6 @@ class GoalsVC: UIViewController {
         super.viewWillAppear(true)
         fetchCoreDataObjects()
         tableView.reloadData()
-        if goalWasSet {
-            AudioManager.shared.playSound(name: "goalSet", type: "mp3")
-            goalWasSet = false
-        }
     }
     func fetchCoreDataObjects() {
         self.fetch { (complete) in
